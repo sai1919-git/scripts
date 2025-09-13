@@ -6,16 +6,16 @@ steps{
 git url: 'https://github.com/sai1919-git/script',branch:'main'
 }
 }
-stage('install dependecies'){
+stage('Install Dependencies'){
 steps{
 echo 'installing '
-sh 'pyhton3 -m venv venv'
-sh 'venv/bin/active && pip install -r requirements.txt .
+sh 'python3 -m venv venv'
+sh '. venv/bin/activate && pip install -r requirements.txt 
 }
 }
 stage('testing'){
 steps{
-sh 'venv/bin/active && pytest tests/'
+sh '. venv/bin/activate && pytest tests/'
 }
 }
 }
